@@ -7,10 +7,9 @@ console.log("Started at http://localhost:8080");
 
 for await (const req: ServerRequest of s) {
     if(req.url === '/api/v1/denoReact'){
-        const results = await runQuery("select * from yelp.restaurant");
+        const results = await runQuery("select * from netflix.stuff");
         console.log(results);
     }else if(req.url === '/about') {
         req.respond({body: "About Me"})
     }
 }
-
